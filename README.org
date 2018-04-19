@@ -1,0 +1,39 @@
+* gnome-screenshot-custom
+
+gnome-screenshot-custom is a collection of shell skript to modify location and
+filenames of your gnome-screenshots.
+
+* Setup
+
+1) clone this repository
+2) Settings -> keyboard
+3) Disable the following shortcuts pressing backspace:
+- Save a screenshot of a window to $USER
+- Save a screenshot of an area to $USER
+- Save a screenshot to $USER
+
+4) Add three custom shortcuts ("+" right down at the bottom)
+
+#+BEGIN_SRC
+Name: Save a screenshot of a window to custom location
+Command: sh -c '/home/$USER/.gnome-screenshot-custom/gs-custom-path-and-name.sh --window'
+Shortcut: Alt + Print
+#+END_SRC
+
+#+BEGIN_SRC
+Name: Save a screenshot of an area to custom location
+Command: sh -c '/home/$USER/.gnome-screenshot-custom/gs-custom-path-and-name.sh --area'
+Shortcut: Shift + Print
+#+END_SRC
+
+#+BEGIN_SRC
+Name: Save a screenshot custom location
+Command: sh -c '/home/$USER/.gnome-screenshot-custom/gs-custom-path-and-name.sh'
+Shortcut: Print
+#+END_SRC
+
+
+In case no screenshots are saved
+#+BEGIN_SRC shell
+sudo chmod a+x '/home/$USER/.gnome-screenshot-custom/gs-custom-path-and-name.sh'
+#+END_SRC
